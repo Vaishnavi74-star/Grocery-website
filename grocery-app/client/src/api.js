@@ -6,6 +6,7 @@ async function request(url, options = {}) {
     headers: { "Content-Type": "application/json" },
     ...options,
   });
+
   const data = await res.json();
   if (!res.ok) throw new Error(data.error || "Request failed");
   return data;
@@ -18,31 +19,43 @@ export const api = {
     if (category) params.set("category", category);
     if (search) params.set("search", search);
     const qs = params.toString();
-    return request(`/products${qs ? `?${qs}` : ""}`);
+
+    return request(`/api/products${qs ? `?${qs}` : ""}`);
   },
-  getCategories: () => request("/categories"),
+
+  getCategories: () => request("/api/categories"),
 
   // Cart
-  getCart: () => request("/cart"),
+  getCart: () => request("/api/cart"),
+
   addToCart: (productId, quantity = 1) =>
-    request("/cart", {
+    request("/api/cart", {
       method: "POST",
       body: JSON.stringify({ productId, quantity }),
     }),
+
   updateCartItem: (productId, quantity) =>
-    request(`/cart/${productId}`, {
+    request(`/api/cart/${productId}`, {
       method: "PUT",
       body: JSON.stringify({ quantity }),
     }),
+
   removeFromCart: (productId) =>
-    request(`/cart/${productId}`, { method: "DELETE" }),
-  clearCart: () => request("/cart", { method: "DELETE" }),
+    request(`/api/cart/${productId}`, {
+      method: "DELETE",
+    }),
+
+  clearCart: () =>
+    request("/api/cart", {
+      method: "DELETE",
+    }),
 
   // Orders
   placeOrder: (customerName, address, phone) =>
-    request("/orders", {
+    request("/api/orders", {
       method: "POST",
       body: JSON.stringify({ customerName, address, phone }),
     }),
-  getOrders: () => request("/orders"),
+
+  getOrders: () => request("/api/orders"),
 };
