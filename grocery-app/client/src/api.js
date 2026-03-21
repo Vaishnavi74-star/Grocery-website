@@ -1,5 +1,5 @@
 // ── API Client ─────────────────────────────────────
-const BASE = "/api";
+const BASE = "https://grocery-website-1-75e6.onrender.com";
 
 async function request(url, options = {}) {
   const res = await fetch(`${BASE}${url}`, {
