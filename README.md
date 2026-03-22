@@ -77,5 +77,4 @@ npm install
 # Start the backend server
 node server.js
 
-##Author
-Vaishnavi Deshpande
+
