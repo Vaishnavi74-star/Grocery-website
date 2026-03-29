@@ -37,6 +37,7 @@ This project demonstrates:
 - HTML
 - CSS
 - JavaScript
+- React(with vite)
 
 ### Backend
 - Node.js
