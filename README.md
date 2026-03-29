@@ -15,7 +15,7 @@ The **Grocery Website** is a full-stack web application that allows users to bro
 This project demonstrates:
 - Frontend and Backend integration
 - REST API usage
-- Deployment using Vercel
+- Deployment using Vercel,render
 - Dynamic data fetching
 
 ---
@@ -43,38 +43,36 @@ This project demonstrates:
 - Express.js
 
 ### Deployment
-- Vercel
+- frontend-Vercel
+- backend-render
 
 ---
 
-## 📁 Project Structure
-Grocery-website/
-│
-├── client/
-│ ├── index.html
-│ ├── style.css
-│ ├── script.js
-│
-├── api/ (or server/)
-│ ├── products.js
-│ ├── server.js / index.js
-│
-├── package.json
-└── README.md
+
 
 ## ⚙️ Installation & Setup
 
 ```bash
-# Clone the repository
+1. Clone the Repository
 git clone https://github.com/Vaishnavi74-star/Grocery-website.git
-
-# Go into the project folder
 cd Grocery-website
-
-# Install dependencies
+⚙️ Backend Setup
+Install backend dependencies
 npm install
-
-# Start the backend server
+Start backend server
 node server.js
 
+👉 Backend runs on: http://localhost:5000 (or your configured port)
 
+💻 Frontend Setup
+Navigate to frontend folder
+cd client
+Install frontend dependencies
+npm install
+Start frontend
+npm start
+
+👉 Frontend runs on: http://localhost:3000
+
+##Author
+Vaishnavi Deshpande
