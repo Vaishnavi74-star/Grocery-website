@@ -16,7 +16,7 @@ This project demonstrates:
 - Frontend and Backend integration
 - REST API usage
 - Deployment using Vercel,render
-- Dynamic data fetching
+- Dynamic data fetchings
 
 ---
 
